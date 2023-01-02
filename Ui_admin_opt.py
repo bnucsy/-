@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\学业\研究生\研一\数据库系统与原理\admin_opt.ui'
+# Form implementation generated from reading ui file 'd:\学业\研究生\研一\数据库系统与原理\健康打卡系统\admin_opt.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_admin_opt(object):
         admin_opt.setObjectName("admin_opt")
         admin_opt.resize(400, 186)
         self.layoutWidget = QtWidgets.QWidget(admin_opt)
-        self.layoutWidget.setGeometry(QtCore.QRect(70, 40, 261, 45))
+        self.layoutWidget.setGeometry(QtCore.QRect(70, 40, 280, 45))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -26,6 +26,7 @@ class Ui_admin_opt(object):
         self.verticalLayout.addWidget(self.label)
         self.admin_opt_combox = QtWidgets.QComboBox(self.layoutWidget)
         self.admin_opt_combox.setObjectName("admin_opt_combox")
+        self.admin_opt_combox.addItem("")
         self.admin_opt_combox.addItem("")
         self.admin_opt_combox.addItem("")
         self.admin_opt_combox.addItem("")
@@ -59,5 +60,6 @@ class Ui_admin_opt(object):
         self.admin_opt_combox.setItemText(3, _translate("admin_opt", "统计当日未打卡/核酸的学生信息"))
         self.admin_opt_combox.setItemText(4, _translate("admin_opt", "统计连续多日未打卡/核酸的学生信息"))
         self.admin_opt_combox.setItemText(5, _translate("admin_opt", "增加学生信息"))
+        self.admin_opt_combox.setItemText(6, _translate("admin_opt", "增加学生打卡信息"))
         self.admin_push_button.setText(_translate("admin_opt", "确定"))
         self.admin_cancel_button.setText(_translate("admin_opt", "取消"))

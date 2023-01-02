@@ -9,6 +9,7 @@ from Ui_check_stu import Ui_check_stu as Ui_MainWindow_check_stu
 from Ui_check_stu_tel import Ui_check_stu_tel as Ui_MainWindow_check_stu_tel
 from Ui_check_ndays_undo import Ui_check_ndays_undo as Ui_MainWindow_check_ndays_undo
 from Ui_add_new_stu import Ui_add_new_stu as Ui_MainWindow_add_new_stu
+from Ui_add_stu_clockin import Ui_add_stu_clockin as Ui_MainWindow_add_stu_clockin
 from PyQt5 import QtWidgets
 import sys
 import pymysql
@@ -347,11 +348,50 @@ class AddStudentWindow(QtWidgets.QWidget, Ui_MainWindow_add_new_stu):
             db.commit()
             QtWidgets.QMessageBox.information(self, '提示', '添加成功')
         except Exception as e:
-            QtWidgets.QMessageBox.warning(self, '提示', '添加失败')
-            print(e)
+            if e.args[0] == 1062:
+                QtWidgets.QMessageBox.warning(self, '提示', '学生已存在')
+            else:
+                QtWidgets.QMessageBox.warning(self, '提示', '添加失败')
+                print(e)
         db.close()
 
     def cancel(self):
+        self.window = AdminOptWindow()
+        self.close()
+        self.window.show()
+
+class AddStuClockinWindow(QtWidgets.QWidget, Ui_MainWindow_add_stu_clockin):
+    def __init__(self):
+        super(AddStuClockinWindow, self).__init__()
+        self.setupUi(self)
+        self.return_button.clicked.connect(self.return_main)
+        self.commit_button.clicked.connect(self.commit)
+
+    def commit(self):
+        student_id = self.student_id_input.text()
+        student_location = self.location_combox.currentText()
+        student_clockin_date = self.clockin_time.date().toString('yyyy-MM-dd')
+        student_clockin_time = self.clockin_time.time().toString('hh:mm:ss')
+        student_complete = self.comboBox.currentText()
+        db = pymysql.connect(host='localhost', user='root', password='admin', database='clockin')
+        cursor = db.cursor()
+        sql = "insert into clockin(cdate, ctime, sid, complete, location) values ('{}', '{}', '{}', '{}', '{}')"
+        sql = sql.format(student_clockin_date, student_clockin_time, student_id, student_complete, student_location)
+        try:
+            cursor.execute(sql)
+            db.commit()
+            QtWidgets.QMessageBox.information(self, '提示', '添加成功')
+        except Exception as e:
+            if e.args[0] == 1452:
+                QtWidgets.QMessageBox.warning(self, '提示', '学号不存在')
+            elif e.args[0] == 1644:
+                QtWidgets.QMessageBox.warning(self, '提示', '已存在该日打卡记录')
+            else:
+                QtWidgets.QMessageBox.warning(self, '提示', '添加失败')
+                print(e)
+        db.close()
+
+    def return_main(self):
         self.window = AdminOptWindow()
         self.close()
         self.window.show()
@@ -368,6 +408,7 @@ class AdminOptWindow(QtWidgets.QWidget, Ui_MainWindow_admin_opt):
         self.check_stu_tel = CheckStuTelWindow()
         self.check_ndays_undo = CheckNdaysUndoWindow()
         self.add_stu = AddStudentWindow()
+        self.add_stu_clockin = AddStuClockinWindow()
 
     def push(self):
         opt = self.admin_opt_combox.currentText()
@@ -389,6 +430,9 @@ class AdminOptWindow(QtWidgets.QWidget, Ui_MainWindow_admin_opt):
         elif opt == '增加学生信息':
             self.close()
             self.add_stu.show()
+        elif opt == '增加学生打卡信息':
+            self.close()
+            self.add_stu_clockin.show()
         else:
             pass
 
