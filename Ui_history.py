@@ -44,7 +44,7 @@ class Ui_history(object):
 
     def retranslateUi(self, history):
         _translate = QtCore.QCoreApplication.translate
-        history.setWindowTitle(_translate("history", "Form"))
+        history.setWindowTitle(_translate("history", "历史记录"))
         self.label.setText(_translate("history", "学号"))
         self.check_button.setText(_translate("history", "查看"))
         self.return_button.setText(_translate("history", "返回"))

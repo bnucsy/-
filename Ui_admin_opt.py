@@ -51,7 +51,7 @@ class Ui_admin_opt(object):
 
     def retranslateUi(self, admin_opt):
         _translate = QtCore.QCoreApplication.translate
-        admin_opt.setWindowTitle(_translate("admin_opt", "Form"))
+        admin_opt.setWindowTitle(_translate("admin_opt", "Admin"))
         self.label.setText(_translate("admin_opt", "选择你要进行的操作"))
         self.admin_opt_combox.setItemText(0, _translate("admin_opt", "统计学院打卡未完成人数"))
         self.admin_opt_combox.setItemText(1, _translate("admin_opt", "修改学生信息"))

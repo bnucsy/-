@@ -72,12 +72,12 @@ class Ui_student_push(object):
 
     def retranslateUi(self, student_push):
         _translate = QtCore.QCoreApplication.translate
-        student_push.setWindowTitle(_translate("student_push", "Form"))
+        student_push.setWindowTitle(_translate("student_push", "每日打卡"))
         self.push_button.setText(_translate("student_push", "提交"))
         self.cancel_button.setText(_translate("student_push", "取消"))
         self.label.setText(_translate("student_push", "学号"))
         self.label_2.setText(_translate("student_push", "学院"))
-        self.label_3.setText(_translate("student_push", "是否完成核酸采样"))
+        self.label_3.setText(_translate("student_push", "是否完成核酸检测"))
         self.pcr_done_combox.setItemText(0, _translate("student_push", "是"))
         self.pcr_done_combox.setItemText(1, _translate("student_push", "否"))
         self.label_4.setText(_translate("student_push", "当前居住地"))

@@ -64,14 +64,14 @@ class Ui_check_stu_tel(object):
 
     def retranslateUi(self, check_stu_tel):
         _translate = QtCore.QCoreApplication.translate
-        check_stu_tel.setWindowTitle(_translate("check_stu_tel", "Form"))
+        check_stu_tel.setWindowTitle(_translate("check_stu_tel", "统计未完成的同学联系方式"))
         self.label.setText(_translate("check_stu_tel", "居住在"))
         self.apartment_combox.setItemText(0, _translate("check_stu_tel", "创新港"))
         self.apartment_combox.setItemText(1, _translate("check_stu_tel", "兴庆"))
         self.apartment_combox.setItemText(2, _translate("check_stu_tel", "全部"))
         self.label_2.setText(_translate("check_stu_tel", "校区未完成今日"))
         self.project_combox.setItemText(0, _translate("check_stu_tel", "健康打卡"))
-        self.project_combox.setItemText(1, _translate("check_stu_tel", "核酸采样"))
+        self.project_combox.setItemText(1, _translate("check_stu_tel", "核酸检测"))
         self.label_3.setText(_translate("check_stu_tel", "的同学联系方式"))
         self.check_button.setText(_translate("check_stu_tel", "查找"))
         self.return_button.setText(_translate("check_stu_tel", "返回"))

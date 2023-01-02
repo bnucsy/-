@@ -61,7 +61,7 @@ class Ui_check_ndays_undo(object):
 
     def retranslateUi(self, check_ndays_undo):
         _translate = QtCore.QCoreApplication.translate
-        check_ndays_undo.setWindowTitle(_translate("check_ndays_undo", "Form"))
+        check_ndays_undo.setWindowTitle(_translate("check_ndays_undo", "统计连续多日未完成的同学信息"))
         self.label.setText(_translate("check_ndays_undo", "连续"))
         self.label_2.setText(_translate("check_ndays_undo", "天未完成"))
         self.project_combox.setItemText(0, _translate("check_ndays_undo", "健康打卡"))

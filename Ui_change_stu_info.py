@@ -64,7 +64,7 @@ class Ui_change_stu_info(object):
 
     def retranslateUi(self, change_stu_info):
         _translate = QtCore.QCoreApplication.translate
-        change_stu_info.setWindowTitle(_translate("change_stu_info", "Form"))
+        change_stu_info.setWindowTitle(_translate("change_stu_info", "更改学生信息"))
         self.label.setText(_translate("change_stu_info", "修改学号为"))
         self.label_2.setText(_translate("change_stu_info", "的"))
         self.project_combox.setItemText(0, _translate("change_stu_info", "姓名"))

@@ -74,7 +74,7 @@ class Ui_add_new_stu(object):
 
     def retranslateUi(self, add_new_stu):
         _translate = QtCore.QCoreApplication.translate
-        add_new_stu.setWindowTitle(_translate("add_new_stu", "Form"))
+        add_new_stu.setWindowTitle(_translate("add_new_stu", "添加新的学生信息"))
         self.label.setText(_translate("add_new_stu", "添加新的学生信息"))
         self.label_2.setText(_translate("add_new_stu", "姓名"))
         self.label_3.setText(_translate("add_new_stu", "学号"))

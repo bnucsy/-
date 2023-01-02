@@ -67,7 +67,7 @@ class Ui_check_stu(object):
 
     def retranslateUi(self, check_stu):
         _translate = QtCore.QCoreApplication.translate
-        check_stu.setWindowTitle(_translate("check_stu", "Form"))
+        check_stu.setWindowTitle(_translate("check_stu", "查询学生信息"))
         self.label.setText(_translate("check_stu", "查询学号"))
         self.label_4.setText(_translate("check_stu", "的"))
         self.project_combox.setItemText(0, _translate("check_stu", "健康打卡"))

@@ -62,7 +62,7 @@ class Ui_check_department(object):
 
     def retranslateUi(self, check_department):
         _translate = QtCore.QCoreApplication.translate
-        check_department.setWindowTitle(_translate("check_department", "Form"))
+        check_department.setWindowTitle(_translate("check_department", "统计学院未完成人数"))
         self.label.setText(_translate("check_department", "统计"))
         self.label_2.setText(_translate("check_department", "当天未完成"))
         self.project_combox.setItemText(0, _translate("check_department", "核酸检测"))

@@ -51,7 +51,7 @@ class Ui_admin_login(object):
 
     def retranslateUi(self, admin_login):
         _translate = QtCore.QCoreApplication.translate
-        admin_login.setWindowTitle(_translate("admin_login", "Form"))
+        admin_login.setWindowTitle(_translate("admin_login", "管理员登录"))
         self.label.setText(_translate("admin_login", "用户名"))
         self.label_2.setText(_translate("admin_login", "密码"))
         self.login_button.setText(_translate("admin_login", "确定"))
